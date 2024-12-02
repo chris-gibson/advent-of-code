@@ -14,7 +14,7 @@ function isSingleDirection(report: number[]) {
 
     const nextDirection = report[i] - report[i + 1] < 0 ? "increasing" : "decreasing";
     if (nextDirection !== initialDirection) {
-      directionChangeIndex = i + 1;
+      directionChangeIndex = i;
       break;
     }
     console.log("nextDirection", i, report[i], report[i + 1], nextDirection)
@@ -22,4 +22,18 @@ function isSingleDirection(report: number[]) {
   return directionChangeIndex;
 }
 
-console.log(isSingleDirection([1, 2, 3, 4, 5]))
+const report = [1, 2, 4, 3, 5];
+const firstPass = isSingleDirection(report);
+if (firstPass === -1) {
+  console.log("Report is safe:", report)
+} else {
+  const newReport = report.toSpliced(firstPass, 1);
+  console.log("Retrying with:", newReport);
+  const secondPass = isSingleDirection(newReport);
+
+  if (secondPass === -1) {
+    console.log("Report is safe:", report);
+  } else {
+    console.log("Report is not safe:", report);
+  }
+}
