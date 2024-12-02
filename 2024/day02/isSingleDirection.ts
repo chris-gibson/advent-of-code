@@ -14,10 +14,11 @@ function isSingleDirection(report: number[]) {
 
     const nextDirection = report[i] - report[i + 1] < 0 ? "increasing" : "decreasing";
     if (nextDirection !== initialDirection) {
+      console.log("Report changed direction:", report[i], "->", report[i + 1], "!==", initialDirection);
       directionChangeIndex = i;
       break;
     }
-    console.log("nextDirection", i, report[i], report[i + 1], nextDirection)
+    // console.log("nextDirection", i, report[i], report[i + 1], nextDirection)
   }
   return directionChangeIndex;
 }
