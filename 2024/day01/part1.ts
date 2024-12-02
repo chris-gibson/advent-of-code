@@ -1,4 +1,4 @@
-const fileContents = await Deno.readTextFile("./2024/day01.txt");
+const fileContents = await Deno.readTextFile("./input.txt");
 const rows = fileContents.split("\n");
 const left: number[] = [];
 const right: number[] = [];

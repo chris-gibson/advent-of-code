@@ -1,4 +1,4 @@
-import { sortedLeft, sortedRight } from "./day01.part1.ts";
+import { sortedLeft, sortedRight } from "./part1.ts";
 
 const instanceCounts = sortedLeft.reduce((acc: Record<number, number>, curr) => {
   if (acc[curr]) {
