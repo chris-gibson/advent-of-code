@@ -1,4 +1,4 @@
-const fileContents = await Deno.readTextFile("./input.txt");
+const fileContents = await Deno.readTextFile("./puzzleInput.txt");
 const rows = fileContents.split("\n");
 const left: number[] = [];
 const right: number[] = [];

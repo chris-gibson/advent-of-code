@@ -1,4 +1,4 @@
-const contents = await Deno.readTextFile("./2024/day02/input.txt");
+const contents = await Deno.readTextFile("./2024/day02/puzzleInput.txt");
 
 const MAX_DIFF = 3;
 
